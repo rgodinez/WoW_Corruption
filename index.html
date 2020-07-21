@@ -98,7 +98,7 @@
 			<tr id="row7">
                 <td onclick="displayCorruptionDate(0, ' ');"></td>
                 <td onclick="displayCorruptionDate(1, 'Ineffable Truth 2');" style="font-weight:bold"></td>
-                <td onclick="displayCorruptionDate(2, 'Avoidant 3');"></td>
+                <td onclick="displayCorruptionDate(2, 'Avoidant 3');" style="font-weight:bold"></td>
 				<td onclick="displayCorruptionDate(3, '');"></td>
                 <td onclick="displayCorruptionDate(4, '');"></td>
                 <td onclick="displayCorruptionDate(5, 'Twilight Devastation 3');" style="font-weight:bold"></td>
@@ -227,7 +227,7 @@
 			for(i = 0; i < all_rots.length; i++)	{
 				day_diff = Math.round((today - all_rots[i].lastAvailable) / 86400000);
 				
-				while(day_diff > 28)	{
+				while(day_diff >= 28)	{
 					all_rots[i].rotateDate();
 					day_diff = Math.round((today - all_rots[i].lastAvailable) / 86400000);
 				}
@@ -241,7 +241,6 @@
 			var today = new Date();
 			for(i = 0; i < all_rots.length; i++)	{
 				day_diff = Math.round((today - all_rots[i].lastAvailable) / 86400000);
-				
 				if(day_diff < 4)	{
 					return i;
 				}
