@@ -3,6 +3,13 @@
 	<head>
 		<meta charset="UTF-8">
 		<title>Corruptions</title>
+		
+		<style>
+			body {
+			  background-color: #8c8a85;
+			  color: black;
+			}
+		</style>
 	</head>
 		
 	<body onload="onLoad()">
@@ -11,7 +18,7 @@
 		
 		<p id="nextRotation"> </p>
 
-	    <table id="rotationTable" border="1">
+	    <table id="rotationTable" border="1" bordercolor=black>
 			
             <!-- The Row Number 0 -->
             <tr>
@@ -203,7 +210,7 @@
 			var months = ['January','February','March','April','May','June','July','August','September','October','November','December'];
 			updateRotationDates();
 			counter = getCurrentRotation();
-			document.getElementById("nextRotation").innerHTML =  "NEXT ROTATION: " + all_rots[counter+1].print();
+			document.getElementById("nextRotation").innerHTML = "NEXT ROTATION: ".bold() + all_rots[counter+1].print();
 			<!--document.getElementById("currentRotation").innerHTML = "Current rotation is highlighted in green on the table;
 			document.getElementById("specificCorruption").innerHTML = " ";
 			<!-- document.getElementById("specificCorruption").innerHTML = all_rots[findNextAvailability("Versatile 2")].lastAvailable + "\n" + all_rots[findNextAvailability("Versatile 2")].nextAvailable;
@@ -248,7 +255,7 @@
 		}
 		
 		function displayCorruptionDate(rotNum, corName)	{
-			document.getElementById("specificCorruption").innerHTML = corName + " is next available: " + all_rots[rotNum].nextAvailable;
+			document.getElementById("specificCorruption").innerHTML = corName.bold() + " is next available: " + all_rots[rotNum].nextAvailable;
 		}
 		
 		function updateTableColor(rotNum)	{
