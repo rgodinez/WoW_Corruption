@@ -4,120 +4,117 @@
 		<meta charset="UTF-8">
 		<title>Corruptions</title>
 		
-		<style>
-			body {
-			  background-color: #8c8a85;
-			  color: black;
-			}
-		</style>
+		<link rel="stylesheet" href="css/normalize.css">
+		<link rel="stylesheet" href="css/skeleton.css">
 	</head>
 		
 	<body onload="onLoad()">
-					
-		<p id="currentRotation"> </p>
-		
-		<p id="nextRotation"> </p>
+		<button style="margin: 1%" onclick="toggleDarkMode.call(this)">Dark Mode</button>
+		<div class="container">
+			<p id="currentRotation"> </p>
+			
+			<p id="nextRotation"> </p>
 
-	    <table id="rotationTable" border="1" bordercolor=black>
+			<table id="rotationTable" border="1" bordercolor=black>
+				
+				<!-- The Row Number 0 -->
+				<tr>
+					<th>Rotation 1</th>
+					<th>Rotation 2</th>
+					<th>Rotation 3</th>
+					<th>Rotation 4</th>
+					<th>Rotation 5</th>
+					<th>Rotation 6</th>
+					<th>Rotation 7</th>
+					<th>Rotation 8</th>				
+				</tr>
+				<!-- End Row Number 0 -->
+				<!--["Deadly Momentum 1", "Echoing Void 3", "Surging Vitality 3", "Twilight Devastation 1", "Twisted Appendage 2", "Versatile 2"]-->
+				
+				<!-- "bgcolor="Lime" -->
+				
+				<tr id="row1">
+					<td onclick="displayCorruptionDate.call(this, 0, 'Ineffable Truth 1');" style="font-weight:bold"></td>
+					<td onclick="displayCorruptionDate.call(this, 1, 'Masterful 1');"></td>
+					<td onclick="displayCorruptionDate.call(this, 2, 'Infinite Stars 1');"></td>
+					<td onclick="displayCorruptionDate.call(this, 3, 'Expedient 2');"></td>
+					<td onclick="displayCorruptionDate.call(this, 4, 'Echoing Void 2');"></td>
+					<td onclick="displayCorruptionDate.call(this, 5, 'Racing Pulse 1');"></td>
+					<td onclick="displayCorruptionDate.call(this, 6, 'Deadly Momentum 3');"></td>
+					<td onclick="displayCorruptionDate.call(this, 7, 'Deadly Momentum 1');"></td>
+				</tr>
+				
+				<tr id="row2">
+					<td onclick="displayCorruptionDate.call(this,0, 'Strikethrough 2');"></td>
+					<td onclick="displayCorruptionDate.call(this,1, 'Void Ritual 1');"></td>
+					<td onclick="displayCorruptionDate.call(this,2, 'Surging Vitality 1');"></td>
+					<td onclick="displayCorruptionDate.call(this,3, 'Honed Mind 3');"></td>
+					<td onclick="displayCorruptionDate.call(this,4, 'Expedient 1');"></td>
+					<td onclick="displayCorruptionDate.call(this,5, 'Masterful 3');" style="font-weight:bold"></td>
+					<td onclick="displayCorruptionDate.call(this,6, 'Echoing Void 1');"></td>
+					<td onclick="displayCorruptionDate.call(this,7, 'Echoing Void 3');"></td>
+				</tr>
+				
+				<tr id="row3">
+					<td onclick="displayCorruptionDate.call(this,0, 'Twisted Appendage 3');"></td>
+					<td onclick="displayCorruptionDate.call(this,1, 'Siphoner 2');"></td>
+					<td onclick="displayCorruptionDate.call(this,2, 'Severe 2');"></td>
+					<td onclick="displayCorruptionDate.call(this,3, 'Severe 1');"></td>
+					<td onclick="displayCorruptionDate.call(this,4, 'Infinite Stars 3');" style="font-weight:bold"></td>
+					<td onclick="displayCorruptionDate.call(this,5, 'Strikethrough 1');"></td>
+					<td onclick="displayCorruptionDate.call(this,6, 'Gushing Wounds');" style="font-weight:bold"></td>
+					<td onclick="displayCorruptionDate.call(this,7, 'Surging Vitality 3');"></td>
+				</tr>
+				
+				<tr id="row4">
+					<td onclick="displayCorruptionDate.call(this,0, 'Honed Mind 1');"></td>
+					<td onclick="displayCorruptionDate.call(this,1, 'Versatile 3');" style="font-weight:bold"></td>
+					<td onclick="displayCorruptionDate.call(this,2, 'Siphoner 3');"></td>
+					<td onclick="displayCorruptionDate.call(this,3, 'Siphoner 1');"></td>
+					<td onclick="displayCorruptionDate.call(this,4, 'Racing Pulse 2');"></td>
+					<td onclick="displayCorruptionDate.call(this,5, 'Void Ritual 2');"></td>
+					<td onclick="displayCorruptionDate.call(this,6, 'Honed Mind 2');"></td>
+					<td onclick="displayCorruptionDate.call(this,7, 'Twilight Devastation 1');"></td>
+				</tr>
+				
+				<tr id="row5">
+					<td onclick="displayCorruptionDate.call(this,0, 'Masterful 2');"></td>
+					<td onclick="displayCorruptionDate.call(this,1, 'Deadly Momentum 2');"></td>
+					<td onclick="displayCorruptionDate.call(this,2, 'Glimpse of Clarity');"></td>
+					<td onclick="displayCorruptionDate.call(this,3, 'Strikethrough 3');"></td>
+					<td onclick="displayCorruptionDate.call(this,4, 'Severe 3');" style="font-weight:bold"></td>
+					<td onclick="displayCorruptionDate.call(this,5, 'Avoidant 1');"></td>
+					<td onclick="displayCorruptionDate.call(this,6, 'Infinite Stars 2');"></td>
+					<td onclick="displayCorruptionDate.call(this,7, 'Twisted Appendage 2');"></td>
+				</tr>
+				
+				<tr id="row6">
+					<td onclick="displayCorruptionDate.call(this,0, 'Expedient 3');" style="font-weight:bold"></td>
+					<td onclick="displayCorruptionDate.call(this,1, 'Avoidant 2');"></td>
+					<td onclick="displayCorruptionDate.call(this,2, 'Racing Pulse 3');"></td>
+					<td onclick="displayCorruptionDate.call(this,3, 'Twilight Devastation 2');"></td>
+					<td onclick="displayCorruptionDate.call(this,4, 'Twisted Appendage 1');"></td>
+					<td onclick="displayCorruptionDate.call(this,5, 'Surging Vitality 2');"></td>
+					<td onclick="displayCorruptionDate.call(this,6, 'Versatile 1');"></td>
+					<td onclick="displayCorruptionDate.call(this,7, 'Versatile 2');"></td>
+				</tr>
+				
+				<tr id="row7">
+					<td></td>
+					<td onclick="displayCorruptionDate.call(this,1, 'Ineffable Truth 2');" style="font-weight:bold"></td>
+					<td onclick="displayCorruptionDate.call(this,2, 'Avoidant 3');" style="font-weight:bold"></td>
+					<td></td>
+					<td></td>
+					<td onclick="displayCorruptionDate.call(this,5, 'Twilight Devastation 3');" style="font-weight:bold"></td>
+					<td onclick="displayCorruptionDate.call(this,6, 'Void Ritual 3');"></td>
+					<td></td>
+				</tr>
+				
+			</table>		
 			
-            <!-- The Row Number 0 -->
-            <tr>
-                <th>Rotation 1</th>
-				<th>Rotation 2</th>
-				<th>Rotation 3</th>
-				<th>Rotation 4</th>
-				<th>Rotation 5</th>
-				<th>Rotation 6</th>
-				<th>Rotation 7</th>
-				<th>Rotation 8</th>				
-            </tr>
-            <!-- End Row Number 0 -->
-			<!--["Deadly Momentum 1", "Echoing Void 3", "Surging Vitality 3", "Twilight Devastation 1", "Twisted Appendage 2", "Versatile 2"]-->
-            
-			<!-- "bgcolor="Lime" -->
-			
-            <tr id="row1">
-                <td onclick="displayCorruptionDate(0, 'Ineffable Truth 1');" style="font-weight:bold"></td>
-                <td onclick="displayCorruptionDate(1, 'Masterful 1');"></td>
-                <td onclick="displayCorruptionDate(2, 'Infinite Stars 1');"></td>
-				<td onclick="displayCorruptionDate(3, 'Expedient 2');"></td>
-                <td onclick="displayCorruptionDate(4, 'Echoing Void 2');"></td>
-                <td onclick="displayCorruptionDate(5, 'Racing Pulse 1');"></td>
-				<td onclick="displayCorruptionDate(6, 'Deadly Momentum 3');"></td>
-                <td onclick="displayCorruptionDate(7, 'Deadly Momentum 1');"></td>
-            </tr>
-            
-            <tr id="row2">
-                <td onclick="displayCorruptionDate(0, 'Strikethrough 2');"></td>
-                <td onclick="displayCorruptionDate(1, 'Void Ritual 1');"></td>
-                <td onclick="displayCorruptionDate(2, 'Surging Vitality 1');"></td>
-				<td onclick="displayCorruptionDate(3, 'Honed Mind 3');"></td>
-                <td onclick="displayCorruptionDate(4, 'Expedient 1');"></td>
-                <td onclick="displayCorruptionDate(5, 'Masterful 3');" style="font-weight:bold"></td>
-				<td onclick="displayCorruptionDate(6, 'Echoing Void 1');"></td>
-                <td onclick="displayCorruptionDate(7, 'Echoing Void 3');"></td>
-            </tr>
-            
-            <tr id="row3">
-                <td onclick="displayCorruptionDate(0, 'Twisted Appendage 3');"></td>
-                <td onclick="displayCorruptionDate(1, 'Siphoner 2');"></td>
-                <td onclick="displayCorruptionDate(2, 'Severe 2');"></td>
-				<td onclick="displayCorruptionDate(3, 'Severe 1');"></td>
-                <td onclick="displayCorruptionDate(4, 'Infinite Stars 3');" style="font-weight:bold"></td>
-                <td onclick="displayCorruptionDate(5, 'Strikethrough 1');"></td>
-				<td onclick="displayCorruptionDate(6, 'Gushing Wounds');" style="font-weight:bold"></td>
-                <td onclick="displayCorruptionDate(7, 'Surging Vitality 3');"></td>
-            </tr>
-            
-            <tr id="row4">
-                <td onclick="displayCorruptionDate(0, 'Honed Mind 1');"></td>
-                <td onclick="displayCorruptionDate(1, 'Versatile 3');" style="font-weight:bold"></td>
-                <td onclick="displayCorruptionDate(2, 'Siphoner 3');"></td>
-				<td onclick="displayCorruptionDate(3, 'Siphoner 1');"></td>
-                <td onclick="displayCorruptionDate(4, 'Racing Pulse 2');"></td>
-                <td onclick="displayCorruptionDate(5, 'Void Ritual 2');"></td>
-				<td onclick="displayCorruptionDate(6, 'Honed Mind 2');"></td>
-                <td onclick="displayCorruptionDate(7, 'Twilight Devastation 1');"></td>
-            </tr>
-            
-            <tr id="row5">
-                <td onclick="displayCorruptionDate(0, 'Masterful 2');"></td>
-                <td onclick="displayCorruptionDate(1, 'Deadly Momentum 2');"></td>
-                <td onclick="displayCorruptionDate(2, 'Glimpse of Clarity');"></td>
-				<td onclick="displayCorruptionDate(3, 'Strikethrough 3');"></td>
-                <td onclick="displayCorruptionDate(4, 'Severe 3');" style="font-weight:bold"></td>
-                <td onclick="displayCorruptionDate(5, 'Avoidant 1');"></td>
-				<td onclick="displayCorruptionDate(6, 'Infinite Stars 2');"></td>
-                <td onclick="displayCorruptionDate(7, 'Twisted Appendage 2');"></td>
-            </tr>
-			
-			<tr id="row6">
-                <td onclick="displayCorruptionDate(0, 'Expedient 3');" style="font-weight:bold"></td>
-                <td onclick="displayCorruptionDate(1, 'Avoidant 2');"></td>
-                <td onclick="displayCorruptionDate(2, 'Racing Pulse 3');"></td>
-				<td onclick="displayCorruptionDate(3, 'Twilight Devastation 2');"></td>
-                <td onclick="displayCorruptionDate(4, 'Twisted Appendage 1');"></td>
-                <td onclick="displayCorruptionDate(5, 'Surging Vitality 2');"></td>
-				<td onclick="displayCorruptionDate(6, 'Versatile 1');"></td>
-                <td onclick="displayCorruptionDate(7, 'Versatile 2');"></td>
-            </tr>
-			
-			<tr id="row7">
-                <td onclick="displayCorruptionDate(0, ' ');"></td>
-                <td onclick="displayCorruptionDate(1, 'Ineffable Truth 2');" style="font-weight:bold"></td>
-                <td onclick="displayCorruptionDate(2, 'Avoidant 3');" style="font-weight:bold"></td>
-				<td onclick="displayCorruptionDate(3, '');"></td>
-                <td onclick="displayCorruptionDate(4, '');"></td>
-                <td onclick="displayCorruptionDate(5, 'Twilight Devastation 3');" style="font-weight:bold"></td>
-				<td onclick="displayCorruptionDate(6, 'Void Ritual 3');"></td>
-                <td onclick="displayCorruptionDate(7, '');"></td>
-            </tr>
-            
-        </table>		
-		
-		<p id="instructions">Click on a corruption in the table to display when it will next be available. </p>
-		<p id="specificCorruption"> </p>
-		
+			<p id="instructions">Click on a corruption in the table to display when it will next be available. </p>
+			<p id="specificCorruption"> </p>
+		</div>				
 	
 	<script>
 		var rotation1 = ["Ineffable Truth 1", "Strikethrough 2", "Twisted Appendage 3", "Honed Mind 1", "Masterful 2", "Expedient 3"];
@@ -139,7 +136,8 @@
         }
 		
 		var d = new Date();
-		var months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+		const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+		const days = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
 
 		class Rotation	{
 			constructor(la, nc, c1, c2, c3, c4, c5, c6, c7)	{
@@ -161,8 +159,6 @@
 			}
 			
 			print()	{
-				var days = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
-				var months = ['January','February','March','April','May','June','July','August','September','October','November','December'];
 
 				var day_diff = Math.round((this.nextAvailable - new Date()) / 86400000);
 				var next_str = days[this.nextAvailable.getDay()] + " " + months[this.nextAvailable.getMonth()] + " " + this.nextAvailable.getDate()
@@ -206,8 +202,6 @@
 		
 		function onLoad()	{
 			var today = new Date();
-			var days = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
-			var months = ['January','February','March','April','May','June','July','August','September','October','November','December'];
 			updateRotationDates();
 			counter = getCurrentRotation();
 			document.getElementById("nextRotation").innerHTML = "NEXT ROTATION: ".bold() + all_rots[counter+1].print();
@@ -215,6 +209,11 @@
 			document.getElementById("specificCorruption").innerHTML = " ";
 			<!-- document.getElementById("specificCorruption").innerHTML = all_rots[findNextAvailability("Versatile 2")].lastAvailable + "\n" + all_rots[findNextAvailability("Versatile 2")].nextAvailable;
 			updateTableColor(counter);
+		}
+		
+		function toggleDarkMode() {
+			document.body.classList.toggle("dark");
+			this.textContent = this.textContent == "Dark Mode"? "Light Mode" : "Dark Mode";
 		}
 		
 		function findNextAvailability(cName)	{
@@ -239,7 +238,7 @@
 					day_diff = Math.round((today - all_rots[i].lastAvailable) / 86400000);
 				}
 				
-				<!-- once the "lastAvailable date has been updated, update the rotation's "nextAvailable" date -->
+				// Once the "lastAvailable date has been updated, update the rotation's "nextAvailable" date
 				all_rots[i].nextAvailable.setTime(all_rots[i].lastAvailable.getTime() + 28*24*60*60*1000);
 			}
 		}
@@ -256,6 +255,8 @@
 		
 		function displayCorruptionDate(rotNum, corName)	{
 			document.getElementById("specificCorruption").innerHTML = corName.bold() + " is next available: " + all_rots[rotNum].nextAvailable;
+			if(document.getElementsByClassName("selected")[0]) document.getElementsByClassName("selected")[0].classList.remove("selected");
+			this.classList.add("selected");
 		}
 		
 		function updateTableColor(rotNum)	{
@@ -264,7 +265,7 @@
 			for(i = 0; i < 8; i++)	{
 				for(j = 0; j < 8; j++)	{
 					if(j == rotNum)	{
-						x[i].cells[j].style.backgroundColor = "lime";
+						x[i].cells[j].classList.add("active");
 					}
 				}
 			}
